@@ -202,7 +202,7 @@ systemctl enable kubelet && systemctl start kubelet
 ```
 
   **Note:**
-
+  
   - Disabling SELinux by running `setenforce 0` is required to allow containers to access the host filesystem, which is required by pod networks for example.
     You have to do this until SELinux support is improved in the kubelet.
   - Some users on RHEL/CentOS 7 have reported issues with traffic being routed incorrectly due to iptables being bypassed. You should ensure
@@ -215,6 +215,7 @@ systemctl enable kubelet && systemctl start kubelet
     EOF
     sysctl --system
     ```
+  - Replace 'x86_64' in baseurl with your system's architecture to install kubeadm for other archs i.e. aarch64, ppc64le etc.
 
 {% endcapture %}
 
